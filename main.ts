@@ -45,7 +45,7 @@ function SCRIPT2 () {
     game.showLongText("Lisa: Goodness, is that the time? Marjorie, one last thing – about \"The Legend of Vennessa\"–", DialogLayout.Bottom)
     game.showLongText("Marjorie: Oh, so you're a fan of the gallant Lady Vennessa too? Why didn't you say so? I have all sorts of items I could recommend...", DialogLayout.Bottom)
     game.showLongText("Marjorie: For example, this lion's tooth pendant with Vennessa's name carved into it. It was once a medal awarded to a knight by the great lady herself!", DialogLayout.Bottom)
-    game.showLongText("Lisa: ...", DialogLayout.Bottom)
+    game.showLongText("Y/N: Lisa: ...", DialogLayout.Bottom)
     game.showLongText("Y/N: The library book you borrowed.", DialogLayout.Bottom)
     game.showLongText("Marjorie: Oh my goodness! I do apologize, I got so excited when you mentioned Vennessa. I didn't know that book was overdue. Even though I take it with me everywhere...I can't believe I didn't put two and two together as soon as I saw you here, haha... Here you go.", DialogLayout.Bottom)
     game.showLongText("Lisa: *sigh* Well, since you look up to Lady Vennessa so very much... Please be more punctual next time.", DialogLayout.Bottom)
@@ -78,7 +78,18 @@ function script4 () {
     game.showLongText("Donna: Welcome...! Uh... c–couples are our specialty! Let me know what you'd like and I'll wrap them up nicely for you.", DialogLayout.Bottom)
     game.showLongText("Lisa: Ah yes... Now which book was it that has the line, \"a date without flowers is a date without romance\"?", DialogLayout.Bottom)
     game.showLongText("Y/N: Would you by any chance care for some flowers, milady?", DialogLayout.Bottom)
-    game.showLongText("Lisa: Why, it just so happens that I would, my kindest cutie.", DialogLayout.Bottom)
+    game.showLongText("Lisa: Why, it just so happens that I would.", DialogLayout.Bottom)
+    game.showLongText("Lisa: Donna: Some flowers for Miss Lisa? What would you like? (Pick a kind that Lisa will like", DialogLayout.Bottom)
+    game.showLongText("Dandelion (A), Mist Flower (B)", DialogLayout.Bottom)
+    if (controller.A.isPressed()) {
+        game.showLongText("Donna: Dandelions are one of our classics, and a personal favorite of Miss Flora, the shop owner.", DialogLayout.Bottom)
+        game.showLongText("Donna: I know what you're thinking: Most flower shops don't sell dandelions, they're a nuisance to care for... Perhaps Miss Flora likes the sense of floating away to a faraway land that the dandelion evokes?", DialogLayout.Bottom)
+        game.showLongText("Donna: I know what you're thinking: Most flower shops don't sell dandelions, they're a nuisance to care for... Perhaps Miss Flora likes the sense of floating away to a faraway land that the dandelion evokes?  Donna: Come to think of it, Miss Flora herself gives people the same impression.", DialogLayout.Bottom)
+        game.showLongText("Lisa: Dandelions? They actually sell dandelions?  Lisa: They have a refreshing scent, similar to the one Jean wears. Thank you.", DialogLayout.Bottom)
+    } else if (controller.B.isPressed()) {
+        game.showLongText("Lisa: Huh? These flowers are saturated with Cryo energy. They could be very dangerous for me.", DialogLayout.Bottom)
+        game.showLongText("Lisa: Don't you know what happens when Cryo meets Electro? *Tut-tut* You certainly haven't been doing your homework.", DialogLayout.Bottom)
+    }
 }
 game.splash("Press A to start", "")
 game.splash("You walk into the library looking for a good book to read")
@@ -405,7 +416,6 @@ let yn = sprites.create(img`
     888888888888888888888888cccd1ddddeeeedd1dbbbdddbb888111111......
     8888888888888888888888888cccdddddeeeedd1dbbbbbbbbb88111111......
     `, SpriteKind.Player)
-controller.moveSprite(yn, 100, 100)
 yn.setPosition(38, 42)
 lisa.setPosition(122, 57)
 Script()
